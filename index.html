@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moje Portfólio | Developer</title>
+  <meta name="description" content="Osobné developerské portfólio – projekty, zručnosti, skúsenosti." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a href="#domov" class="logo" id="logo">‹dev/›</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#domov">Domov</a>
+        <a href="#o-mne">O mne</a>
+        <a href="#zrucnosti">Zručnosti</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#skusenosti">Skúsenosti</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="domov" class="hero container">
+      <div class="hero-text">
+        <p class="hero-hi" id="heroHi">Ahoj, som</p>
+        <h1 id="heroName">Štefan Vaceľ</h1>
+        <h2 id="heroRole">Junior Developer</h2>
+        <p class="hero-desc" id="heroDesc"></p>
+        <div class="hero-actions">
+          <a href="#projekty" class="btn btn-primary">Pozrieť projekty</a>
+          <a href="#kontakt" class="btn btn-ghost">Kontakt</a>
+        </div>
+        <div class="hero-social" id="heroSocial"></div>
+      </div>
+      <div class="hero-card">
+        <div class="code-window">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <pre id="heroCode"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- O MNE -->
+    <section id="o-mne" class="section container">
+      <h2 class="section-title">O mne</h2>
+      <div class="about-grid">
+        <div>
+          <p id="aboutText"></p>
+          <ul class="about-list" id="aboutFacts"></ul>
+        </div>
+        <div class="about-box">
+          <h3>Aktuálne</h3>
+          <p id="aboutNow"></p>
+          <a href="#kontakt" class="btn btn-primary" style="margin-top:1rem">Spolupracujme</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZRUČNOSTI -->
+    <section id="zrucnosti" class="section container">
+      <h2 class="section-title">Zručnosti</h2>
+      <p class="section-sub">Klikni na kategóriu. Novú zručnosť pridáš jedným riadkom v <code>js/data.js</code>.</p>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- PROJEKTY -->
+    <section id="projekty" class="section container">
+      <h2 class="section-title">Projekty <span class="count" id="projectCount"></span></h2>
+      <p class="section-sub">Všetky projekty sa načítavajú z <code>js/data.js → PROJECTS</code>. Nový projekt = skopíruješ 1 blok.</p>
+
+      <div class="toolbar">
+        <input type="search" id="searchInput" placeholder="Hľadať projekt alebo technológiu…" />
+        <div class="filters" id="filters"></div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+      <p class="empty hidden" id="emptyState">Nič sa nenašlo. Skús iný filter alebo hľadanie.</p>
+    </section>
+
+    <!-- SKÚSENOSTI -->
+    <section id="skusenosti" class="section container">
+      <h2 class="section-title">Skúsenosti</h2>
+      <p class="section-sub">Pridáš v <code>js/data.js → EXPERIENCE</code>. Najnovšie daj navrch.</p>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section container">
+      <h2 class="section-title">Kontakt</h2>
+      <div class="contact-grid">
+        <div>
+          <p id="contactText"></p>
+          <ul class="contact-list" id="contactList"></ul>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Meno<input name="name" required placeholder="Tvoje meno" /></label>
+          <label>E-mail<input name="email" type="email" required placeholder="email@example.com" /></label>
+          <label>Správa<textarea name="message" rows="5" required placeholder="Napíš mi…"></textarea></label>
+          <button class="btn btn-primary" type="submit">Odoslať (otvorí e-mail)</button>
+          <p class="form-note">Formulár bez servera – otvorí tvoj e-mailový klient. Neskôr vieme napojiť Formspree.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span id="footerText"></span>
+      <a href="#top">↑ Hore</a>
+    </div>
+  </footer>
+
+  <!-- Modal detail projektu -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
